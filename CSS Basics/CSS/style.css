@@ -1,0 +1,92 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fixed header stays at the top */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  z-index: 1000;
+}
+
+/* Navigation links */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+main {
+  margin-top: 80px; /* Space below fixed header */
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f6fa;
+}
+
+/* Bio section */
+.bio {
+  max-width: 60%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile image */
+.profile-img {
+  width: 150px; /* px unit */
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+
+/* Paragraph text */
+.bio p {
+  font-size: 1.2em; /* em unit */
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* Footer always at the bottom */
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem; /* rem unit */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Use vh and % for responsiveness */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

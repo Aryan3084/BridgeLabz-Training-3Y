@@ -1,0 +1,121 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+/* Pricing container using flexbox */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+/* Each plan card */
+.plan {
+  background-color: #ffffff;
+  border: 2px solid #bdc3c7;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Highlight popular plan */
+.popular {
+  border: 3px solid #f39c12;
+  background-color: #fdf5e6;
+}
+
+/* Hover effect */
+.plan:hover {
+  transform: scale(1.05);
+  background-color: #e8f0fe;
+}
+
+/* Plan headings */
+.plan h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Features list */
+.plan ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.plan li {
+  margin: 0.5rem 0;
+}
+
+/* Price */
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Button link */
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 800px) {
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+}
