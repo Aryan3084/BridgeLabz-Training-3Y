@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body class="login-form-csrf">
+    <!-- CSRF token helps prevent cross-site request forgery attacks -->
+    <h2>Login Form</h2>
+    <form>
+        <label>Username:</label><br>
+        <input type="text" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" required><br><br>
+
+        <input type="hidden" name="csrf_token" value="dummy123token">
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
