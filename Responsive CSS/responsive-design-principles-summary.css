@@ -1,0 +1,108 @@
+/* ---------- Global Styles ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* ---------- Header ---------- */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #004aad;
+    font-size: 2rem;
+}
+
+/* ---------- Grid Layout ---------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* ---------- Principle Boxes ---------- */
+.principle {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.principle h2 {
+    color: #0077b6;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.principle p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.principle pre {
+    background: #f1f1f1;
+    padding: 0.8rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* ---------- Hover Effects ---------- */
+.principle:hover {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.principle:hover pre {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* ---------- Responsive Layout ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .principle {
+        text-align: center;
+    }
+}

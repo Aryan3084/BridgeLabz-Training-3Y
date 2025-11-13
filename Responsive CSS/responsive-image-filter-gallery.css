@@ -1,0 +1,91 @@
+/* ---------- Global Reset and Basic Styling ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e0f7fa);
+    color: #333;
+}
+
+/* ---------- Header ---------- */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #555;
+}
+
+/* ---------- Gallery Layout ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* ---------- Each Image Item ---------- */
+.image-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.5s ease;
+}
+
+/* ---------- Filters ---------- */
+.blur img { filter: blur(3px); }
+.grayscale img { filter: grayscale(100%); }
+.sepia img { filter: sepia(100%); }
+.brightness img { filter: brightness(60%); }
+.contrast img { filter: contrast(180%); }
+.hue-rotate img { filter: hue-rotate(180deg); }
+
+/* ---------- Hover Effects ---------- */
+.image-item:hover img {
+    filter: none;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Captions ---------- */
+figcaption {
+    padding: 0.8rem;
+    background-color: #0077b6;
+    color: white;
+    font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    background-color: #0077b6;
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}

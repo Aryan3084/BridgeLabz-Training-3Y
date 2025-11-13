@@ -1,0 +1,86 @@
+/* ---------- Global Styles ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8fafc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* ---------- Card Container ---------- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 1.5rem);
+    max-width: 280px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card h2 {
+    color: #0077b6;
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    color: #555;
+}
+
+.card:hover {
+    background-color: #caf0f8;
+    transform: scale(1.05);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ---------- Media Queries ---------- */
+
+/* Tablet View (≤900px): 2 columns */
+@media (max-width: 900px) {
+    .card {
+        flex: 1 1 calc(45% - 1.5rem);
+        max-width: 100%;
+    }
+}
+
+/* Mobile View (≤600px): 1 column */
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

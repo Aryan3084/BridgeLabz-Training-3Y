@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Principles Summary</title>
+    <link rel="stylesheet" href="responsive-design-principles-summary.css">
+</head>
+<body>
+    <header>
+        <h1>Responsive Design Principles</h1>
+    </header>
+
+    <main class="grid-container">
+        <section class="principle">
+            <h2>Fluid Layouts</h2>
+            <p>Use relative units like %, vw, and vh instead of fixed px to make elements resize dynamically.</p>
+            <pre><code>container { width: 80%; }</code></pre>
+        </section>
+
+        <section class="principle">
+            <h2>Flexible Media</h2>
+            <p>Ensure images and videos adjust to screen size by using max-width and height properties.</p>
+            <pre><code>img { max-width: 100%; height: auto; }</code></pre>
+        </section>
+
+        <section class="principle">
+            <h2>Breakpoints</h2>
+            <p>Use media queries to modify layout and typography for different screen widths.</p>
+            <pre><code>@media (max-width: 600px) {
+  body { font-size: 14px; }
+}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Responsive Design Summary</p>
+    </footer>
+</body>
+</html>

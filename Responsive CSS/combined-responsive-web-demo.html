@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Responsive Web Demo</title>
+    <link rel="stylesheet" href="combined-responsive-web-demo.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">ResponsiveWeb</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Gallery</a>
+            <a href="#">Learn</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-grid">
+        <section class="gallery fade-in">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://via.placeholder.com/200x150" alt="Image 1">
+                <img src="https://via.placeholder.com/200x150" alt="Image 2">
+                <img src="https://via.placeholder.com/200x150" alt="Image 3">
+                <img src="https://via.placeholder.com/200x150" alt="Image 4">
+                <img src="https://via.placeholder.com/200x150" alt="Image 5">
+                <img src="https://via.placeholder.com/200x150" alt="Image 6">
+            </div>
+        </section>
+
+        <section class="text fade-in">
+            <h2>What is Responsive Design?</h2>
+            <p>
+                Responsive design ensures that web pages look good on all devices by adapting
+                layout, typography, and components to the screen size. It relies on flexible grids,
+                media queries, and relative units like <code>rem</code>, <code>vw</code>, and <code>%</code>.
+            </p>
+            <p>
+                Using CSS Flexbox and Grid, developers can create dynamic layouts that resize
+                seamlessly. Try resizing this page to see the sections rearrange themselves!
+            </p>
+        </section>
+
+        <section class="cheatsheet fade-in">
+            <h2>Responsive CSS Cheat Sheet</h2>
+            <ul>
+                <li><strong>Media Queries:</strong> Adjust layout at breakpoints like 700px.</li>
+                <li><strong>Flexbox:</strong> Align elements horizontally or vertically with ease.</li>
+                <li><strong>Grid:</strong> Create structured multi-column layouts.</li>
+                <li><strong>Typography:</strong> Use <code>clamp()</code> for scalable fonts.</li>
+                <li><strong>Transitions:</strong> Add smooth hover effects.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Contact: info@responsivewebdemo.com | © 2025 Responsive Demo Page</p>
+    </footer>
+</body>
+</html>

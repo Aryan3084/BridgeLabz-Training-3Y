@@ -1,0 +1,97 @@
+/* ---------- Global Styles ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* ---------- Header ---------- */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #004aad;
+}
+
+/* ---------- Grid Layout ---------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* ---------- Topic Boxes ---------- */
+.topic {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.topic h2 {
+    color: #0077b6;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.topic p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* ---------- Hover Effects ---------- */
+.topic:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    background: #e8f5ff;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 700px) {
+    body {
+        padding: 1rem;
+    }
+
+    .topic {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topic h2 {
+        background: #0077b6;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+    }
+
+    .topic p {
+        font-size: 0.95rem;
+    }
+}
