@@ -1,0 +1,64 @@
+/* ---------- General Page Styling ---------- */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa, #dbe9f4);
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* ---------- Header ---------- */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* ---------- Flexbox Layout ---------- */
+.boxes {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------- Common Box Styling ---------- */
+.box {
+    width: 300px;
+    padding: 30px;
+    border: 10px solid #333;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Default Box (content-box) ---------- */
+.default-box {
+    box-sizing: content-box;
+    background-color: #ffd6d6;
+}
+
+/* ---------- Border-Box ---------- */
+.border-box {
+    box-sizing: border-box;
+    background-color: #d6f5d6;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 700px) {
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .box {
+        width: 80%;
+    }
+}

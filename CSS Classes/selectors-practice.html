@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Practice Page</title>
+    <link rel="stylesheet" href="selectors-practice.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Selectors Practice Page</h1>
+    </header>
+
+    <main>
+        <section class="selectors-demo">
+            <h2>1. Element Selector</h2>
+            <p>This paragraph is styled using an <strong>element selector</strong>.</p>
+
+            <h2>2. Class Selector</h2>
+            <p class="highlight">This text is styled with a <strong>class selector</strong>.</p>
+
+            <h2>3. ID Selector</h2>
+            <p id="unique">This one uses an <strong>ID selector</strong> for a unique style.</p>
+
+            <h2>4. Attribute Selector</h2>
+            <a href="https://example.com" target="_blank">External Link</a>
+            <a href="/about">Internal Link</a>
+            <p>Links above are styled using an <strong>attribute selector</strong>.</p>
+
+            <h2>5. Combinators</h2>
+            <div class="combinator-demo">
+                <p>First paragraph inside div (styled with descendant selector).</p>
+                <p>Second paragraph inside div.</p>
+                <span>Sibling text after div elements.</span>
+            </div>
+            <p>Paragraph right after div (styled with + combinator).</p>
+            <p>Another paragraph after that (styled with ~ combinator).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created for CSS Selector Practice</p>
+    </footer>
+</body>
+</html>
