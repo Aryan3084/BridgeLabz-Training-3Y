@@ -1,0 +1,64 @@
+/* General Page Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f3f8;
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 1em 0;
+}
+
+/* Text Shadow for Heading */
+header h1 {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Flexbox Layout for Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 3em;
+}
+
+/* Base Card Style */
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 250px;
+    padding: 1.5em;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Different Box Shadow Styles */
+.soft-shadow {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.medium-shadow {
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.deep-shadow {
+    box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Hover Lift Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 12px 25px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 2em;
+    font-size: 0.9em;
+}

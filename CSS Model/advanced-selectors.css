@@ -1,0 +1,103 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    padding: 2em;
+}
+
+/* --------------------------------------------- */
+/* ATTRIBUTE SELECTORS */
+/* Select input elements of type="text" */
+input[type="text"] {
+    border: 2px solid #007bff;
+    padding: 8px;
+    margin: 5px;
+}
+
+/* Select links that start with https */
+a[href^="https"] {
+    color: green;
+    font-weight: bold;
+}
+
+/* Select links that start with http (non-secure) */
+a[href^="http"]:not([href^="https"]) {
+    color: red;
+}
+
+/* --------------------------------------------- */
+/* PSEUDO-CLASSES */
+/* Highlight input when focused */
+input:focus {
+    border-color: #ff9800;
+    outline: none;
+    background-color: #fff3e0;
+}
+
+/* Change link color on hover */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style every even list item differently */
+.fancy-list li:nth-child(even) {
+    background-color: #e0f7fa;
+}
+
+/* --------------------------------------------- */
+/* PSEUDO-ELEMENTS */
+/* Add symbols before and after list items */
+.fancy-list li::before {
+    content: "• ";
+    color: #00796b;
+    font-weight: bold;
+}
+
+.fancy-list li::after {
+    content: " ✔";
+    color: #388e3c;
+}
+
+/* --------------------------------------------- */
+/* COMBINATORS */
+/* Child combinator (>) — targets direct children only */
+.parent > p {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Descendant combinator — targets nested paragraphs */
+.parent div p {
+    color: #ff5722;
+}
+
+/* Adjacent sibling (+) — targets the paragraph right after a span */
+span + p {
+    color: #4caf50;
+    font-style: italic;
+}
+
+/* General sibling (~) — would target all p after a span if multiple existed */
+span ~ p {
+    border-left: 4px solid #9c27b0;
+    padding-left: 8px;
+}
+
+/* --------------------------------------------- */
+/* Footer */
+footer {
+    margin-top: 2em;
+    font-size: 0.9em;
+}

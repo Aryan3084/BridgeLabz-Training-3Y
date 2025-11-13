@@ -1,0 +1,70 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    color: #222;
+    text-align: center;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+}
+
+/* Flexbox Layout for Boxes */
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 3em;
+}
+
+/* Base Box Style */
+.transform-box {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+/* Different Colors for Each Box */
+.rotate { background-color: #ff5722; }
+.scale { background-color: #4caf50; }
+.translate { background-color: #2196f3; }
+.skew { background-color: #9c27b0; }
+
+/* Transformations on Hover */
+.rotate:hover {
+    transform: rotate(45deg);
+}
+
+.scale:hover {
+    transform: scale(1.4);
+}
+
+.translate:hover {
+    transform: translate(40px, -20px);
+}
+
+.skew:hover {
+    transform: skew(20deg, 10deg);
+}
+
+/* Labels under Boxes */
+.labels {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    margin-top: 3em;
+    font-size: 0.9em;
+}

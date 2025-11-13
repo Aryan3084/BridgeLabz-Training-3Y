@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Exploration</title>
+    <link rel="stylesheet" href="box-model.css">
+</head>
+<body>
+    <header>
+        <h1>Box Model Exploration Page</h1>
+    </header>
+
+    <main class="container">
+        <section class="demo">
+            <div class="outer-box">
+                <div class="border-layer">
+                    <div class="padding-layer">
+                        <div class="content-layer">
+                            Content Area
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="desc">
+                This box visually shows the <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, 
+                and <strong>margin</strong> areas. The outer spacing is the <mark>margin</mark>, 
+                followed by <mark>border</mark>, <mark>padding</mark>, and finally the <mark>content</mark> area inside.
+            </p>
+        </section>
+
+        <section class="comparison">
+            <div class="box default-box">Default (content-box)</div>
+            <div class="box border-box">With box-sizing: border-box</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created for HTML & CSS Practice</p>
+    </footer>
+</body>
+</html>
