@@ -1,0 +1,16 @@
+/* ===== Custom Styling for Portfolio ===== */
+
+/* Button Hover Effects */
+.btn:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Smooth Fade for Image */
+img {
+    transition: transform 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+}

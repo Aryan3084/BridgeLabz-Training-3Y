@@ -1,0 +1,27 @@
+/* ===== Custom Styling for Blog Pagination ===== */
+
+/* Pagination hover effect */
+.pagination .page-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* Pager button hover */
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+  transition: 0.3s ease;
+}
+
+/* Example post spacing */
+main h3 {
+  margin-bottom: 0.25rem;
+}
+
+main p {
+  margin-bottom: 1rem;
+}

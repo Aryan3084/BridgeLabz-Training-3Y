@@ -1,0 +1,20 @@
+/* ===== Custom Styling for Task Tracker ===== */
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* List group item hover */
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  transition: 0.3s ease;
+}
+
+/* Button hover */
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}

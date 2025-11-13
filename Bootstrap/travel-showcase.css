@@ -1,0 +1,39 @@
+/* ===== Custom Styling for Travel Showcase ===== */
+
+/* Carousel captions */
+.carousel-caption {
+  background-color: rgba(0,0,0,0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-caption h5 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+}
+
+/* Progress bar text styling */
+.progress-bar {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Footer styling */
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+/* Add slight hover scale to carousel images */
+.carousel-item img {
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.02);
+}

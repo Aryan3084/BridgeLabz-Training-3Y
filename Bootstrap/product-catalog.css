@@ -1,0 +1,23 @@
+/* ===== Custom Styling for Product Catalog ===== */
+
+/* Smooth hover effects */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive image size */
+.card-img-top {
+  object-fit: cover;
+  height: 150px;
+}
+
+/* Button hover */
+.btn:hover {
+  background-color: #0a58ca;
+  transition: 0.3s ease;
+}

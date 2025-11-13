@@ -1,0 +1,40 @@
+/* ===== Custom Bootstrap Theme Overrides ===== */
+
+/* ✅ Override Bootstrap primary color and font */
+:root {
+    --bs-primary: #ff6b6b; /* Custom theme color */
+    --bs-font-sans-serif: 'Roboto', sans-serif; /* Google Font */
+}
+
+/* Global body font */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Blog Card Hover Effect */
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover */
+.btn-primary:hover {
+    background-color: #ff8787;
+    border-color: #ff8787;
+    transition: 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}

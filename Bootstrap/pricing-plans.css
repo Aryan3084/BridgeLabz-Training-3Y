@@ -1,0 +1,30 @@
+/* ===== Custom Styling for Pricing Plans ===== */
+
+/* Card hover effect */
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* Price styling */
+.card-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Button hover */
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa;
+  color: #000;
+  transition: 0.3s ease;
+}
