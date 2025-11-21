@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Ticket Booking</title>
+<style>
+  input { display: block; margin: 8px 0; padding: 5px; width: 200px; }
+  .error { border: 2px solid red; }
+  .valid { border: 2px solid green; }
+  .message { color: red; font-size: 0.9em; }
+  #ticket { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Movie Ticket Booking</h2>
+<form id="bookingForm" novalidate>
+  <label>Name: <input type="text" id="name"></label>
+  <span id="nameMsg" class="message"></span>
+
+  <label>Email: <input type="email" id="email"></label>
+  <span id="emailMsg" class="message"></span>
+
+  <label>Seats (1-10): <input type="number" id="seats" min="1" max="10"></label>
+  <span id="seatsMsg" class="message"></span>
+
+  <button type="submit">Book Ticket</button>
+</form>
+
+<div id="ticket"></div>
+
+<script>
+"use strict";
+
+// Elements
+const form = document.getElementById("bookingForm");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const seatsInput = document.getElementById("seats");
+const nameMsg = document.getElementById("nameMsg");
+const emailMsg = document.getElementById("emailMsg");
+const seatsMsg = document.getElementById("seatsMsg");
+const ticketDiv = document.getElementById("ticket");
+
+// Validation functions
+function validateName() {
+    const regex = /^[A-Za-z\s]+$/;
+    if (!regex.test(nameInput.value)) {
+        nameInput.classList.add("error");
+        nameInput.classList.remove("valid");
+        nameMsg.textContent = "Name must contain only alphabets.";
+        return false;
+    } else {
+        nameInput.classList.add("valid");
+        nameInput.classList.remove("error");
+        nameMsg.textContent = "";
+        return true;
+    }
+}
+
+function validateEmail() {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    if (!regex.test(emailInput.value)) {
+        emailInput.classList.add("error");
+        emailInput.classList.remove("valid");
+        emailMsg.textContent = "Invalid email format.";
+        return false;
+    } else {
+        emailInput.classList.add("valid");
+        emailInput.classList.remove("error");
+        emailMsg.textContent = "";
+        return true;
+    }
+}
+
+function validateSeats() {
+    const seats = Number(seatsInput.value);
+    if (!seats || seats < 1 || seats > 10) {
+        seatsInput.classList.add("error");
+        seatsInput.classList.remove("valid");
+        seatsMsg.textContent = "Seats must be between 1 and 10.";
+        return false;
+    } else {
+        seatsInput.classList.add("valid");
+        seatsInput.classList.remove("error");
+        seatsMsg.textContent = "";
+        return true;
+    }
+}
+
+// Form submission
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const isValid = validateName() & validateEmail() & validateSeats();
+    if (isValid) {
+        // Store booking info
+        const booking = {
+            name: nameInput.value,
+            email: emailInput.value,
+            seats: Number(seatsInput.value)
+        };
+
+        // Display ticket
+        ticketDiv.innerHTML = `Ticket Confirmed! <br>
+            Name: ${booking.name} <br>
+            Email: ${booking.email} <br>
+            Seats: ${booking.seats}`;
+    } else {
+        ticketDiv.innerHTML = "";
+        alert("Please correct errors before booking.");
+    }
+});
+</script>
+
+</body>
+</html>

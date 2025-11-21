@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Form Validator</title>
+<style>
+  input { display: block; margin: 10px 0; padding: 5px; }
+  .error { border: 2px solid red; }
+  .valid { border: 2px solid green; }
+  .message { color: red; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+<form id="studentForm" novalidate>
+  <label>Name: <input type="text" id="name"></label>
+  <span id="nameMsg" class="message"></span>
+
+  <label>Email: <input type="email" id="email"></label>
+  <span id="emailMsg" class="message"></span>
+
+  <label>Phone: <input type="text" id="phone"></label>
+  <span id="phoneMsg" class="message"></span>
+
+  <label>Password: <input type="password" id="password"></label>
+  <span id="passwordMsg" class="message"></span>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+"use strict";
+
+// Form and fields
+const form = document.getElementById("studentForm");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const passwordInput = document.getElementById("password");
+
+const nameMsg = document.getElementById("nameMsg");
+const emailMsg = document.getElementById("emailMsg");
+const phoneMsg = document.getElementById("phoneMsg");
+const passwordMsg = document.getElementById("passwordMsg");
+
+// Validation functions
+function validateName() {
+    const regex = /^[A-Za-z\s]+$/;
+    if (!regex.test(nameInput.value)) {
+        nameInput.classList.add("error");
+        nameInput.classList.remove("valid");
+        nameMsg.textContent = "Name must contain only alphabets.";
+        return false;
+    } else {
+        nameInput.classList.add("valid");
+        nameInput.classList.remove("error");
+        nameMsg.textContent = "";
+        return true;
+    }
+}
+
+function validateEmail() {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    if (!regex.test(emailInput.value)) {
+        emailInput.classList.add("error");
+        emailInput.classList.remove("valid");
+        emailMsg.textContent = "Invalid email format.";
+        return false;
+    } else {
+        emailInput.classList.add("valid");
+        emailInput.classList.remove("error");
+        emailMsg.textContent = "";
+        return true;
+    }
+}
+
+function validatePhone() {
+    const regex = /^\d{10}$/;
+    if (!regex.test(phoneInput.value)) {
+        phoneInput.classList.add("error");
+        phoneInput.classList.remove("valid");
+        phoneMsg.textContent = "Phone must be exactly 10 digits.";
+        return false;
+    } else {
+        phoneInput.classList.add("valid");
+        phoneInput.classList.remove("error");
+        phoneMsg.textContent = "";
+        return true;
+    }
+}
+
+function validatePassword() {
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).+$/;
+    if (!regex.test(passwordInput.value)) {
+        passwordInput.classList.add("error");
+        passwordInput.classList.remove("valid");
+        passwordMsg.textContent = "Password must have 1 uppercase, 1 number, 1 special char.";
+        return false;
+    } else {
+        passwordInput.classList.add("valid");
+        passwordInput.classList.remove("error");
+        passwordMsg.textContent = "";
+        return true;
+    }
+}
+
+// Event listeners for live validation
+nameInput.addEventListener("input", validateName);
+emailInput.addEventListener("input", validateEmail);
+phoneInput.addEventListener("input", validatePhone);
+passwordInput.addEventListener("input", validatePassword);
+
+// Form submission
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const isValid = validateName() & validateEmail() & validatePhone() & validatePassword();
+    if (isValid) {
+        alert("Form submitted successfully!");
+    } else {
+        alert("Please fix the errors before submitting.");
+    }
+});
+</script>
+
+</body>
+</html>

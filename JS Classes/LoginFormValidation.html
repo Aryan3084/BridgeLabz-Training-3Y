@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form Validation</title>
+<style>
+  input { display: block; margin: 8px 0; padding: 5px; width: 200px; }
+  .error { border: 2px solid red; }
+  .valid { border: 2px solid green; }
+  .message { color: red; font-size: 0.9em; }
+  #result { margin-top: 15px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+<form id="loginForm" novalidate>
+  <label>Username: <input type="text" id="username"></label>
+  <span id="usernameMsg" class="message"></span>
+
+  <label>Password: <input type="password" id="password"></label>
+  <span id="passwordMsg" class="message"></span>
+
+  <button type="submit">Login</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+"use strict";
+
+// Elements
+const form = document.getElementById("loginForm");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const usernameMsg = document.getElementById("usernameMsg");
+const passwordMsg = document.getElementById("passwordMsg");
+const resultDiv = document.getElementById("result");
+
+// Validation functions
+function validateUsername() {
+    if (usernameInput.value.length < 5) {
+        usernameInput.classList.add("error");
+        usernameInput.classList.remove("valid");
+        usernameMsg.textContent = "Username must be at least 5 characters.";
+        return false;
+    } else {
+        usernameInput.classList.add("valid");
+        usernameInput.classList.remove("error");
+        usernameMsg.textContent = "";
+        return true;
+    }
+}
+
+function validatePassword() {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+    if (!regex.test(passwordInput.value)) {
+        passwordInput.classList.add("error");
+        passwordInput.classList.remove("valid");
+        passwordMsg.textContent = "Password must be 8+ chars, include number, uppercase, lowercase, special char.";
+        return false;
+    } else {
+        passwordInput.classList.add("valid");
+        passwordInput.classList.remove("error");
+        passwordMsg.textContent = "";
+        return true;
+    }
+}
+
+// Live validation
+usernameInput.addEventListener("input", validateUsername);
+passwordInput.addEventListener("input", validatePassword);
+
+// Form submission
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const isValid = validateUsername() & validatePassword();
+    if (isValid) {
+        resultDiv.style.color = "green";
+        resultDiv.textContent = "Login successful!";
+    } else {
+        resultDiv.style.color = "red";
+        resultDiv.textContent = "Please fix the errors before submitting.";
+    }
+});
+</script>
+
+</body>
+</html>

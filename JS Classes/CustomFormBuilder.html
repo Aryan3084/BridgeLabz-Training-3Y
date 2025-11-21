@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Form Builder</title>
+<style>
+  label { display: block; margin: 10px 0 5px; }
+  input { padding: 5px; width: 200px; }
+  button { margin-top: 15px; padding: 5px 10px; }
+</style>
+</head>
+<body>
+
+<h2>Dynamic Form</h2>
+<div id="formContainer"></div>
+
+<script>
+"use strict";
+
+// Q4 – Custom Form Builder
+
+class FormBuilder {
+    constructor(fields, containerId) {
+        this.fields = fields;
+        this.container = document.getElementById(containerId);
+        this.createForm();
+    }
+
+    createForm() {
+        let formHTML = '<form id="dynamicForm">';
+        this.fields.forEach(field => {
+            formHTML += `
+                <label>${field.label}:</label>
+                <input type="${field.type}" name="${field.label}">
+            `;
+        });
+        formHTML += `<button type="submit">Submit</button></form>`;
+        this.container.innerHTML = formHTML;
+
+        // Attach submit event
+        const formElement = document.getElementById("dynamicForm");
+        formElement.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const data = this.getFormData();
+            console.log("Form Data:", data);
+            alert(JSON.stringify(data, null, 2));
+        });
+    }
+
+    getFormData() {
+        const data = {};
+        this.fields.forEach(field => {
+            const input = document.querySelector(`input[name="${field.label}"]`);
+            data[field.label] = input.value;
+        });
+        return data;
+    }
+}
+
+// Example fields array
+const fieldsArray = [
+    { type: "text", label: "Username" },
+    { type: "email", label: "Email" },
+    { type: "password", label: "Password" },
+    { type: "number", label: "Age" }
+];
+
+// Initialize the FormBuilder
+new FormBuilder(fieldsArray, "formContainer");
+</script>
+
+</body>
+</html>
